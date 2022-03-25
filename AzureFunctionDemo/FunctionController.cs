@@ -72,8 +72,8 @@ namespace AzureFunctionDemo
             response.Headers.Add("Content-Type", "application/json; charset=utf-8");
             var body = new CommonResponse<T> {
                 Code = (int)statusCode,
-                Message = "",
-                Error = "",
+                Message = message,
+                Error = error,
                 Payload = payload != null ? JsonConvert.SerializeObject(payload) : string.Empty,
                 Data = responseData
             };
